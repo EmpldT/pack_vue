@@ -1,7 +1,10 @@
 module.exports={
-    entry:'./base.js',
+    entry:{
+        home:'./js/home.js',
+        signup:'./js/signup.js'
+    },
     output:{
-        filename:'bundle.js',
-        path:__dirname
+        filename:'[name].bundle.js',
+        path:__dirname+'/dist'
     }
 }
