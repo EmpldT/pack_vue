@@ -8,7 +8,52 @@
     <title>Document</title>
 </head>
 <body>
-
+<div class="header">注册页</div>
+<div class="content">
+    <h1>注册页面</h1>
+    <form action="home.html" class="form" id="app">
+        <div class="input-group">
+        <label>请输入名称：<input type="text" v-model="name"></label><br>
+        <span v-if="name">你的名字是：{{name}}</span>
+        </div>
+        <div class="input-group">
+            <label>请输入密码:<input type="password" v-model="password1"></label>
+        </div>
+        <div class="input-group">
+            <label>请重复密码：<input type="password" v-model="password2" @blur="passBlur"></label>
+            <span v-if="dif">请输入相同密码</span>
+        </div>
+        <div class="input-group">请选择性别:
+            <label><input type="radio" value="男" v-model="sex">男</label>
+            <label><input type="radio" value="女" v-model="sex">女</label>
+            <br>
+            <span v-if="sex">您的性别是：{{sex}}</span>
+        </div>
+        <div class="input-group">
+            <label>请输入手机号码：<input type="text" required v-model.number="phone"></label><br>
+            <span v-if="phone">您的手机号码是：{{phone}}</span>
+        </div>
+        <div class="input-group">
+            您想要去哪里？<br>
+        <select v-model="dist" multiple>
+            <option value="1">深圳</option>
+            <option value="2">广州</option>
+            <option value="3">惠州</option>
+            <option value="4">珠海</option>
+            <option value="5">佛山</option>
+            <option value="6">汕头</option>
+            <option value="7">湛江</option>
+        </select>
+        </div>
+        <div v-on="{mouseenter:onEnter,mouseleave:onOut}" @click="onClick">点我</div><br><br><br>
+        <div class="input-group">
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+<div class="footer">页脚</div>
+<script src="../js/vue.js"></script>
+<script src="../js/main.js"></script>
 <script src="../dist/signup.bundle.js"></script>
 
 </body>
